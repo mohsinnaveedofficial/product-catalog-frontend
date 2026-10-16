@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --text: #667085;
+  --text-h: #172033;
+  --bg: #f6f8fc;
+  --border: #e4e9f2;
+  --code-bg: #ffffff;
+  --accent: #2563eb;
+  --accent-bg: rgba(37, 99, 235, 0.1);
+  --accent-border: rgba(37, 99, 235, 0.35);
+  --social-bg: rgba(239, 243, 250, 0.8);
+  --shadow:
+    rgba(31, 45, 71, 0.08) 0 10px 24px -8px,
+    rgba(31, 45, 71, 0.05) 0 4px 8px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+[data-theme="dark"] {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
+  --accent-border: rgba(192, 132, 252, 0.5);
+  --social-bg: rgba(47, 48, 58, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.theme-page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.theme-panel {
+  color: var(--text-h);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.theme-tag {
+  color: var(--text-h) !important;
+}
+
+.theme-surface {
+  background: var(--code-bg);
+  color: var(--text-h);
+  border-color: var(--border);
+}
+
+.theme-form-label,
+.theme-form {
+  color: var(--text-h);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+.theme-navbar {
+  color: var(--text-h);
+  background: var(--bg);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.theme-heading {
+  color: var(--text-h);
+}
+
+.theme-card {
+  background: var(--bg);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.theme-media {
+  background: var(--code-bg);
+}
+
+.theme-control {
+  color: var(--text-h);
+  background: var(--bg);
+}
+
+.theme-muted {
+  color: var(--text);
+}
+
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-white\/90,
+[data-theme="dark"] .bg-white\/95 {
+  background-color: var(--code-bg) !important;
+}
+
+[data-theme="dark"] .bg-purple-50\/60,
+[data-theme="dark"] .bg-indigo-50,
+[data-theme="dark"] .bg-indigo-50\/60,
+[data-theme="dark"] .bg-indigo-50\/70,
+[data-theme="dark"] .bg-violet-100 {
+  background-color: var(--accent-bg) !important;
+}
+
+[data-theme="dark"] .bg-indigo-100 {
+  background-color: color-mix(in srgb, var(--accent) 20%, var(--bg)) !important;
+}
+
+[data-theme="dark"] .bg-slate-50,
+[data-theme="dark"] .bg-slate-100,
+[data-theme="dark"] .bg-gray-100 {
+  background-color: var(--bg) !important;
+}
+
+[data-theme="dark"] .text-black,
+[data-theme="dark"] .text-gray-600,
+[data-theme="dark"] .text-gray-700 {
+  color: var(--text-h) !important;
+}
+
+[data-theme="dark"] .text-slate-900,
+[data-theme="dark"] .text-slate-800,
+[data-theme="dark"] .text-slate-700,
+[data-theme="dark"] .text-slate-600,
+[data-theme="dark"] .text-slate-500 {
+  color: var(--text-h) !important;
+}
+
+[data-theme="dark"] .text-slate-400 {
+  color: var(--text) !important;
+}
+
+[data-theme="dark"] .border-slate-100,
+[data-theme="dark"] .border-slate-200,
+[data-theme="dark"] .ring-slate-100,
+[data-theme="dark"] .ring-slate-200,
+[data-theme="dark"] .ring-indigo-100 {
+  border-color: var(--border) !important;
+  --tw-ring-color: var(--border) !important;
+}
+
+[data-theme="dark"] .bg-purple-50 {
+  background-color: var(--bg) !important;
+}
+
+[data-theme="dark"] .shadow-sm,
+[data-theme="dark"] .shadow-md,
+[data-theme="dark"] .shadow-lg,
+[data-theme="dark"] .shadow-xl,
+[data-theme="dark"] .shadow-indigo-100 {
+  --tw-shadow-color: transparent !important;
+  box-shadow: var(--shadow) !important;
+}
+
+[data-theme="dark"] .from-indigo-50,
+[data-theme="dark"] .from-purple-50,
+[data-theme="dark"] .via-white,
+[data-theme="dark"] .to-white,
+[data-theme="dark"] .to-purple-50 {
+  --tw-gradient-from: var(--bg) !important;
+  --tw-gradient-to: var(--bg) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.theme-outline-button {
+  color: var(--text-h);
+  border-color: var(--border);
+}
+
+.theme-outline-button:hover {
+  color: var(--bg);
+  background: var(--text-h);
+}
+
+.landing-page {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(147, 197, 253, 0.28), transparent 28rem),
+    radial-gradient(circle at 92% 42%, rgba(196, 181, 253, 0.2), transparent 26rem),
+    var(--bg);
+}
+
+.theme-accent {
+  color: var(--accent);
+}
+
+[data-theme="dark"] .landing-page {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(79, 70, 229, 0.12), transparent 28rem),
+    radial-gradient(circle at 92% 42%, rgba(124, 58, 237, 0.1), transparent 26rem),
+    var(--bg);
+}
+
+.font-raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.font-dmsans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.font-sans {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "GRAD" 0;
+}
